@@ -1,0 +1,16 @@
+App\Infrastructure\Doctrine\Player\PlayerDataMapper:
+    type: entity
+    table: 'player'
+    repositoryClass: App\Infrastructure\Doctrine\Player\Adapter\PlayerRepository
+    id:
+        id:
+            type: uuid
+    fields:
+        email:
+            type: string
+            unique: true
+        hashedPassword:
+            type: string
+        name:
+            type: string
+            unique: true
