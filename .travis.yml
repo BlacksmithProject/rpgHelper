@@ -9,6 +9,9 @@ notifications:
 php:
   - 7.2
 
+env:
+  - DATABASE_URL=mysql://travis@127.0.0.1:3306/rpg_helper_test
+
 before_script:
   - make dev-from-scratch
 

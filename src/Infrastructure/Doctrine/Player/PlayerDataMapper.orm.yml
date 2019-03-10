@@ -8,9 +8,12 @@ App\Infrastructure\Doctrine\Player\PlayerDataMapper:
     fields:
         email:
             type: string
+            length: 191
             unique: true
         hashedPassword:
             type: string
+            length: 191
         name:
             type: string
+            length: 191
             unique: true
