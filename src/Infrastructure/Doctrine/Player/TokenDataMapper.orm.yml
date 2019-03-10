@@ -10,7 +10,10 @@ App\Infrastructure\Doctrine\Player\TokenDataMapper:
             type: uuid
         value:
             type: string
+            length: 191
+            unique: true
         expireAt:
             type: datetime_immutable
         type:
             type: string
+            length: 191

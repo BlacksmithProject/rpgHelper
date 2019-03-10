@@ -5,7 +5,7 @@ composer:
 	-a | composer install
 
 database:
-	bin/console d:d:d --force
+	-bin/console d:d:d --force
 	bin/console d:d:c
 	-y | bin/console doctrine:migrations:migrate
 
@@ -15,9 +15,6 @@ remove-useless-files:
 	rm -rf ./src/Entity
 	rm -rf ./src/Migrations
 	rm -rf ./src/Repository
-
-context:
-	./vendor/bin/build context $(NAME)
 
 pretty:
 	./vendor/bin/pretty
