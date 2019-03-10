@@ -1,0 +1,20 @@
+player:
+    email:
+        cannot_be_null: "L'email ne peut pas être vide"
+        cannot_be_blank: "L'email doit être rempli"
+        must_be_valid: "L'email doit être valide"
+        already_used: "Cet email n'est pas disponible"
+    password:
+        cannot_be_null: "Le mot de passe ne peut pas être vide"
+        cannot_be_blank: "Le mot de passe doit être rempli"
+    name:
+        cannot_be_null: "Le nom ne peut pas être vide"
+        cannot_be_blank: "Le nom doit être rempli"
+        already_used: "Ce nom n'est pas disponible"
+    token:
+        cannot_be_null: "Le token ne peut pas être vide"
+        cannot_be_blank: "Le token doit être rempli"
+    not_found: "Joueur non trouvé"
+
+token:
+    not_found: "Token non trouvé"

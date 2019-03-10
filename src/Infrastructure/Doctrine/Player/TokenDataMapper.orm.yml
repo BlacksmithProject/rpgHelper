@@ -1,0 +1,16 @@
+App\Infrastructure\Doctrine\Player\TokenDataMapper:
+    type: entity
+    table: 'token'
+    repositoryClass: App\Infrastructure\Doctrine\Player\Adapter\TokenRepository
+    id:
+        id:
+            type: uuid
+    fields:
+        playerId:
+            type: uuid
+        value:
+            type: string
+        expireAt:
+            type: datetime_immutable
+        type:
+            type: string
