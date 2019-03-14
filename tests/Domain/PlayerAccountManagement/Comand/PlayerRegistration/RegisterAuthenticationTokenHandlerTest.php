@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace App\Tests\Domain\PlayerAccountManagement\Comand\PlayerRegistration;
 
-use App\Domain\PlayerAccountManagement\Command\PlayerRegistration\RegisterAuthenticationTokenHandler;
+use App\PlayerAccountManagement\Domain\Command\PlayerRegistration\RegisterAuthenticationTokenHandler;
 use App\Tests\Domain\PlayerAccountManagement\BaseTestCase;
 
 final class RegisterAuthenticationTokenHandlerTest extends BaseTestCase

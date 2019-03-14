@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace App\Tests\Domain\PlayerAccountManagement\ValueObject;
 
-use App\Domain\PlayerAccountManagement\ValueObject\Email;
+use App\PlayerAccountManagement\Domain\ValueObject\Email;
 use App\Tests\Domain\PlayerAccountManagement\BaseTestCase;
 use Assert\InvalidArgumentException;
 

@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace App\Tests\Domain\PlayerAccountManagement\Query;
 
-use App\Domain\PlayerAccountManagement\Query\FindPlayerWithId;
+use App\PlayerAccountManagement\Domain\Query\FindPlayerWithId;
 use App\Tests\Domain\PlayerAccountManagement\BaseTestCase;
 
 final class FindPlayerWithIdTest extends BaseTestCase

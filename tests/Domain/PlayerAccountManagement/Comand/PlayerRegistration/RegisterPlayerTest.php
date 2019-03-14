@@ -3,8 +3,8 @@ declare(strict_types=1);
 
 namespace App\Tests\Domain\PlayerAccountManagement\Comand\PlayerRegistration;
 
-use App\Domain\PlayerAccountManagement\Command\PlayerRegistration\RegisterPlayer;
-use App\Domain\PlayerAccountManagement\ValueObject\PlayerId;
+use App\PlayerAccountManagement\Domain\Command\PlayerRegistration\RegisterPlayer;
+use App\PlayerAccountManagement\Domain\ValueObject\PlayerId;
 use App\Tests\Domain\PlayerAccountManagement\BaseTestCase;
 
 final class RegisterPlayerTest extends BaseTestCase

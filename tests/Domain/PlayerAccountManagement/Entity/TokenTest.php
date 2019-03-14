@@ -3,11 +3,11 @@ declare(strict_types=1);
 
 namespace App\Tests\Domain\PlayerAccountManagement\Entity;
 
-use App\Domain\PlayerAccountManagement\Entity\Token;
-use App\Domain\PlayerAccountManagement\ValueObject\PlayerId;
-use App\Domain\PlayerAccountManagement\ValueObject\TokenId;
-use App\Domain\PlayerAccountManagement\ValueObject\TokenType;
-use App\Domain\PlayerAccountManagement\ValueObject\TokenValue;
+use App\PlayerAccountManagement\Domain\Entity\Token;
+use App\PlayerAccountManagement\Domain\ValueObject\PlayerId;
+use App\PlayerAccountManagement\Domain\ValueObject\TokenId;
+use App\PlayerAccountManagement\Domain\ValueObject\TokenType;
+use App\PlayerAccountManagement\Domain\ValueObject\TokenValue;
 use App\Tests\Domain\PlayerAccountManagement\BaseTestCase;
 
 final class TokenTest extends BaseTestCase

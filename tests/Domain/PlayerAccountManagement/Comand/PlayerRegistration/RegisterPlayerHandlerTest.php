@@ -3,8 +3,8 @@ declare(strict_types=1);
 
 namespace App\Tests\Domain\PlayerAccountManagement\Comand\PlayerRegistration;
 
-use App\Domain\PlayerAccountManagement\Command\PlayerRegistration\RegisterPlayerHandler;
-use App\Domain\PlayerAccountManagement\PlayerAccountManagementException;
+use App\PlayerAccountManagement\Domain\Command\PlayerRegistration\RegisterPlayerHandler;
+use App\PlayerAccountManagement\Domain\PlayerAccountManagementException;
 use App\Tests\Domain\PlayerAccountManagement\BaseTestCase;
 
 final class RegisterPlayerHandlerTest extends BaseTestCase

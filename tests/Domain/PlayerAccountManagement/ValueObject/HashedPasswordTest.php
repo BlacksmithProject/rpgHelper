@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace App\Tests\Domain\PlayerAccountManagement\ValueObject;
 
-use App\Domain\PlayerAccountManagement\ValueObject\HashedPassword;
+use App\PlayerAccountManagement\Domain\ValueObject\HashedPassword;
 use App\Tests\Domain\PlayerAccountManagement\BaseTestCase;
 
 final class HashedPasswordTest extends BaseTestCase

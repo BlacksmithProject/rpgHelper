@@ -1,0 +1,64 @@
+<?php
+declare(strict_types=1);
+
+namespace App\PlayerAccountManagement\Application\Service;
+
+use App\PlayerAccountManagement\Application\Model\AuthenticatedPlayer;
+use App\PlayerAccountManagement\Domain\Command\PlayerRegistration\RegisterPlayer;
+use App\PlayerAccountManagement\Domain\Command\PlayerRegistration\RegisterAuthenticationToken;
+use App\PlayerAccountManagement\Domain\PlayerCommandBus;
+use App\PlayerAccountManagement\Domain\Query\FindPlayerWithId;
+use App\Shared\Application\Identity;
+use App\PlayerAccountManagement\Domain\Query\FindTokenWithPlayerIdAndType;
+use App\PlayerAccountManagement\Domain\ValueObject\TokenType;
+use Doctrine\DBAL\Connection;
+
+final class SignUpPlayer
+{
+    private $playerCommandBus;
+    private $findPlayerWithId;
+    private $findTokenWithPlayerIdAndType;
+    private $connection;
+
+    public function __construct(
+        PlayerCommandBus $playerCommandBus,
+        FindPlayerWithId $findPlayerWithId,
+        FindTokenWithPlayerIdAndType $findTokenWithPlayerIdAndType,
+        Connection $connection
+    ) {
+        $this->playerCommandBus = $playerCommandBus;
+        $this->findPlayerWithId = $findPlayerWithId;
+        $this->findTokenWithPlayerIdAndType = $findTokenWithPlayerIdAndType;
+        $this->connection = $connection;
+    }
+
+    /**
+     * @throws \Doctrine\DBAL\ConnectionException
+     * @throws \Exception
+     */
+    public function __invoke(?string $email, ?string $password, ?string $name): AuthenticatedPlayer
+    {
+        $this->connection->beginTransaction();
+
+        try {
+            $playerId = Identity::generate();
+            $tokenId = Identity::generate();
+
+            ($this->playerCommandBus)(new RegisterPlayer($playerId, $email, $password, $name));
+            ($this->playerCommandBus)(new RegisterAuthenticationToken($tokenId, $playerId));
+
+            $player = ($this->findPlayerWithId)($playerId);
+            $token = ($this->findTokenWithPlayerIdAndType)($playerId, TokenType::AUTHENTICATION());
+
+            $authenticatedPlayer = new AuthenticatedPlayer($player, $token);
+
+            $this->connection->commit();
+
+            return $authenticatedPlayer;
+        } catch (\Exception $exception) {
+            $this->connection->rollBack();
+
+            throw $exception;
+        }
+    }
+}

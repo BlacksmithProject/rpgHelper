@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace App\Tests\Domain\PlayerAccountManagement\Query;
 
-use App\Domain\PlayerAccountManagement\Query\FindPlayerWithEmail;
+use App\PlayerAccountManagement\Domain\Query\FindPlayerWithEmail;
 use App\Tests\Domain\PlayerAccountManagement\BaseTestCase;
 
 final class FindPlayerWithEmailTest extends BaseTestCase

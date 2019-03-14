@@ -3,22 +3,22 @@ declare(strict_types=1);
 
 namespace App\Tests\Domain\PlayerAccountManagement;
 
-use App\Domain\PlayerAccountManagement\Command\PlayerRegistration\RegisterAuthenticationToken;
-use App\Domain\PlayerAccountManagement\Command\PlayerRegistration\RegisterPlayer;
-use App\Domain\PlayerAccountManagement\Entity\Player;
-use App\Domain\PlayerAccountManagement\Entity\Token;
-use App\Domain\PlayerAccountManagement\Port\PlayerReader;
-use App\Domain\PlayerAccountManagement\Port\PlayerWriter;
-use App\Domain\PlayerAccountManagement\Port\TokenReader;
-use App\Domain\PlayerAccountManagement\Port\TokenWriter;
-use App\Domain\PlayerAccountManagement\ValueObject\Email;
-use App\Domain\PlayerAccountManagement\ValueObject\HashedPassword;
-use App\Domain\PlayerAccountManagement\ValueObject\PlainPassword;
-use App\Domain\PlayerAccountManagement\ValueObject\PlayerId;
-use App\Domain\PlayerAccountManagement\ValueObject\PlayerName;
-use App\Domain\PlayerAccountManagement\ValueObject\TokenId;
-use App\Domain\PlayerAccountManagement\ValueObject\TokenType;
-use App\Domain\PlayerAccountManagement\ValueObject\TokenValue;
+use App\PlayerAccountManagement\Domain\Command\PlayerRegistration\RegisterAuthenticationToken;
+use App\PlayerAccountManagement\Domain\Command\PlayerRegistration\RegisterPlayer;
+use App\PlayerAccountManagement\Domain\Entity\Player;
+use App\PlayerAccountManagement\Domain\Entity\Token;
+use App\PlayerAccountManagement\Domain\Port\PlayerReader;
+use App\PlayerAccountManagement\Domain\Port\PlayerWriter;
+use App\PlayerAccountManagement\Domain\Port\TokenReader;
+use App\PlayerAccountManagement\Domain\Port\TokenWriter;
+use App\PlayerAccountManagement\Domain\ValueObject\Email;
+use App\PlayerAccountManagement\Domain\ValueObject\HashedPassword;
+use App\PlayerAccountManagement\Domain\ValueObject\PlainPassword;
+use App\PlayerAccountManagement\Domain\ValueObject\PlayerId;
+use App\PlayerAccountManagement\Domain\ValueObject\PlayerName;
+use App\PlayerAccountManagement\Domain\ValueObject\TokenId;
+use App\PlayerAccountManagement\Domain\ValueObject\TokenType;
+use App\PlayerAccountManagement\Domain\ValueObject\TokenValue;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 
