@@ -5,3 +5,10 @@
 [![Build Status](https://scrutinizer-ci.com/g/BlacksmithProject/rpgHelper/badges/build.png?b=master)](https://scrutinizer-ci.com/g/BlacksmithProject/rpgHelper/build-status/master)
 
 API to play table RPG when no one is in the same room.
+
+## Architecture:
+
+- Context
+  - Application
+  - Domain
+  - Infrastructure
