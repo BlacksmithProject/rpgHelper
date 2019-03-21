@@ -3,14 +3,14 @@ declare(strict_types=1);
 
 namespace App\Shared\Application;
 
-use App\PlayerAccountManagement\Domain\ValueObject\CredentialsId;
-use App\PlayerAccountManagement\Domain\ValueObject\PlayerId;
-use App\PlayerAccountManagement\Domain\ValueObject\TokenId;
+use App\UserAccountManagement\Domain\ValueObject\CredentialsId;
+use App\UserAccountManagement\Domain\ValueObject\UserId;
+use App\UserAccountManagement\Domain\ValueObject\TokenId;
 use App\Shared\Infrastructure\Exception\InternalException;
 use Ramsey\Uuid\Uuid;
 use Ramsey\Uuid\UuidInterface;
 
-final class Identity implements CredentialsId, TokenId, PlayerId
+final class Identity implements CredentialsId, TokenId, UserId
 {
     private $value;
 

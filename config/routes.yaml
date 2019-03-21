@@ -1,9 +1,9 @@
-players_signup:
-    path: /players
-    controller: App\PlayerAccountManagement\Application\API\SignUpController
+users_signup:
+    path: /users
+    controller: App\UserAccountManagement\Application\API\SignUpController
     methods: [POST]
 
-players_signin:
-    path: /players
-    controller: App\PlayerAccountManagement\Application\API\SignInController
+users_signin:
+    path: /users
+    controller: App\UserAccountManagement\Application\API\SignInController
     methods: [GET]
