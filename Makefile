@@ -1,4 +1,7 @@
-dev-from-scratch: composer remove-useless-files database
+dev-from-scratch:
+	vagrant destroy -f && vagrant up
+
+install: composer remove-useless-files database
 
 composer:
 	-rm -rf ./vendor
@@ -41,5 +44,8 @@ start:
 
 stop:
 	bin/console server:stop
+
+diff:
+	bin/console doctrine:migrations:diff
 
 .PHONY: dev-from-scratch composer pretty pretty-fix stan test test-CI CI release start stop
