@@ -1,7 +1,4 @@
-dev-from-scratch:
-	vagrant destroy -f && vagrant up
-
-install: composer remove-useless-files database
+dev-from-scratch: composer remove-useless-files database
 
 composer:
 	-rm -rf ./vendor
