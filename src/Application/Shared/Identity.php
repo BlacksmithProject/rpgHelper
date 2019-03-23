@@ -3,14 +3,13 @@ declare(strict_types=1);
 
 namespace App\Application\Shared;
 
-use App\Domain\UserAccountManagement\ValueObject\CredentialsId;
-use App\Domain\UserAccountManagement\ValueObject\UserId;
-use App\Domain\UserAccountManagement\ValueObject\TokenId;
+use App\Domain\CredentialsManagement\ValueObject\CredentialsId;
+use App\Domain\CredentialsManagement\ValueObject\TokenId;
 use App\Infrastructure\Shared\Exception\InternalException;
 use Ramsey\Uuid\Uuid;
 use Ramsey\Uuid\UuidInterface;
 
-final class Identity implements CredentialsId, TokenId, UserId
+final class Identity implements CredentialsId, TokenId
 {
     private $value;
 
