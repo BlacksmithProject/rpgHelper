@@ -1,9 +1,9 @@
 users_signup:
     path: /users
-    controller: App\UserAccountManagement\Application\API\SignUpController
+    controller: App\Application\UserAccountManagement\API\SignUpController
     methods: [POST]
 
 users_signin:
     path: /users
-    controller: App\UserAccountManagement\Application\API\SignInController
+    controller: App\Application\UserAccountManagement\API\SignInController
     methods: [GET]

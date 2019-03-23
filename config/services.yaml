@@ -20,14 +20,14 @@ services:
 
     # controllers are imported separately to make sure services can be injected
     # as action arguments even if you don't extend any base controller class
-    App\UserAccountManagement\Application\API\:
-       resource: '../src/UserAccountManagement/Application/API/'
+    App\Application\UserAccountManagement\API\:
+       resource: '../src/Application/UserAccountManagement/API/'
        tags: ['controller.service_arguments']
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
 
-    App\Shared\Application\Listener\ExceptionListener:
-        class: App\Shared\Application\Listener\ExceptionListener
+    App\Application\Shared\Listener\ExceptionListener:
+        class: App\Application\Shared\Listener\ExceptionListener
         tags:
             - { name: kernel.event_listener, event: kernel.exception }

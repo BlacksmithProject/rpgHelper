@@ -1,0 +1,19 @@
+App\Infrastructure\UserAccountManagement\Doctrine\TokenDataMapper:
+    type: entity
+    table: 'token'
+    repositoryClass: App\Infrastructure\UserAccountManagement\Doctrine\Adapter\TokenRepository
+    id:
+        id:
+            type: uuid
+    fields:
+        userId:
+            type: uuid
+        value:
+            type: string
+            length: 191
+            unique: true
+        expireAt:
+            type: datetime_immutable
+        type:
+            type: string
+            length: 191

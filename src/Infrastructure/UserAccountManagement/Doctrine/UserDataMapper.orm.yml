@@ -1,0 +1,19 @@
+App\Infrastructure\UserAccountManagement\Doctrine\UserDataMapper:
+    type: entity
+    table: 'user'
+    repositoryClass: App\Infrastructure\UserAccountManagement\Doctrine\Adapter\UserRepository
+    id:
+        id:
+            type: uuid
+    fields:
+        email:
+            type: string
+            length: 191
+            unique: true
+        hashedPassword:
+            type: string
+            length: 191
+        name:
+            type: string
+            length: 191
+            unique: true
