@@ -31,10 +31,6 @@ final class ErrorMessage extends Enum
     private const PASSWORD_CANNOT_BE_NULL = 'credentials.password.cannot_be_null';
     private const PASSWORD_CANNOT_BE_BLANK = 'credentials.password.cannot_be_blank';
 
-    private const NAME_CANNOT_BE_NULL = 'credentials.name.cannot_be_null';
-    private const NAME_CANNOT_BE_BLANK = 'credentials.name.cannot_be_blank';
-    private const NAME_ALREADY_USED = 'credentials.name.already_used';
-
     private const TOKEN_VALUE_CANNOT_BE_NULL = 'credentials.token_value.cannot_be_null';
     private const TOKEN_VALUE_CANNOT_BE_BLANK = 'credentials.token_value.cannot_be_blank';
 }

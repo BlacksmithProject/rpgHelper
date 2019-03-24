@@ -1,9 +1,9 @@
-credentials_signup:
-    path: /credentials
-    controller: App\Application\CredentialsManagement\API\SignUpController
+players_signup:
+    path: /players
+    controller: App\Application\API\SignUpController
     methods: [POST]
 
-credentials_signin:
-    path: /credentials
-    controller: App\Application\CredentialsManagement\API\SignInController
+players_signin:
+    path: /players
+    controller: App\Application\API\SignInController
     methods: [GET]

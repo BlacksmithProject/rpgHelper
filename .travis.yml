@@ -15,7 +15,7 @@ env:
 before_script:
   - make dev-from-scratch
 
-script: make test-CI
+script: make CI
 
 after_script:
   - wget https://scrutinizer-ci.com/ocular.phar;

@@ -5,11 +5,12 @@ namespace App\Application\Shared;
 
 use App\Domain\CredentialsManagement\ValueObject\CredentialsId;
 use App\Domain\CredentialsManagement\ValueObject\TokenId;
+use App\Domain\GameManagement\ValueObject\PlayerId;
 use App\Infrastructure\Shared\Exception\InternalException;
 use Ramsey\Uuid\Uuid;
 use Ramsey\Uuid\UuidInterface;
 
-final class Identity implements CredentialsId, TokenId
+final class Identity implements CredentialsId, TokenId, PlayerId
 {
     private $value;
 
