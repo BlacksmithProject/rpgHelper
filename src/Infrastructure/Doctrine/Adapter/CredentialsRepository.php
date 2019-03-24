@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Infrastructure\CredentialsManagement\Doctrine\Adapter;
+namespace App\Infrastructure\Doctrine\Adapter;
 
 use App\Domain\CredentialsManagement\Entity\Credentials;
 use App\Domain\CredentialsManagement\Port\CredentialsReader;
@@ -9,8 +9,8 @@ use App\Domain\CredentialsManagement\Port\CredentialsWriter;
 use App\Domain\CredentialsManagement\ValueObject\Email;
 use App\Domain\CredentialsManagement\ValueObject\CredentialsId;
 use App\Infrastructure\Shared\Doctrine\Exception\NotFoundException;
-use App\Infrastructure\CredentialsManagement\Doctrine\Exception\ErrorMessage;
-use App\Infrastructure\CredentialsManagement\Doctrine\CredentialsDataMapper;
+use App\Infrastructure\Doctrine\Exception\ErrorMessage;
+use App\Infrastructure\Doctrine\CredentialsDataMapper;
 use App\Infrastructure\Shared\Exception\InternalException;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;

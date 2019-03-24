@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Infrastructure\CredentialsManagement\Doctrine\Exception;
+namespace App\Infrastructure\Doctrine\Exception;
 
 use MyCLabs\Enum\Enum;
 

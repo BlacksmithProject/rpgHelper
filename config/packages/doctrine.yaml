@@ -24,6 +24,6 @@ doctrine:
             User:
                 is_bundle: false
                 type: yml
-                dir: '%kernel.project_dir%/src/Infrastructure/CredentialsManagement/Doctrine'
-                prefix: 'App\Infrastructure\CredentialsManagement\Doctrine'
+                dir: '%kernel.project_dir%/src/Infrastructure/Doctrine'
+                prefix: 'App\Infrastructure\Doctrine'
                 alias: User

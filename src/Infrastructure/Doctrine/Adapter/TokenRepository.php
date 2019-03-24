@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Infrastructure\CredentialsManagement\Doctrine\Adapter;
+namespace App\Infrastructure\Doctrine\Adapter;
 
 use App\Domain\CredentialsManagement\Entity\Token;
 use App\Domain\CredentialsManagement\Port\TokenReader;
@@ -10,8 +10,8 @@ use App\Domain\CredentialsManagement\ValueObject\CredentialsId;
 use App\Domain\CredentialsManagement\ValueObject\TokenId;
 use App\Domain\CredentialsManagement\ValueObject\TokenType;
 use App\Infrastructure\Shared\Doctrine\Exception\NotFoundException;
-use App\Infrastructure\CredentialsManagement\Doctrine\Exception\ErrorMessage;
-use App\Infrastructure\CredentialsManagement\Doctrine\TokenDataMapper;
+use App\Infrastructure\Doctrine\Exception\ErrorMessage;
+use App\Infrastructure\Doctrine\TokenDataMapper;
 use App\Infrastructure\Shared\Exception\InternalException;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;

@@ -1,7 +1,7 @@
-App\Infrastructure\CredentialsManagement\Doctrine\TokenDataMapper:
+App\Infrastructure\Doctrine\TokenDataMapper:
     type: entity
     table: 'token'
-    repositoryClass: App\Infrastructure\CredentialsManagement\Doctrine\Adapter\TokenRepository
+    repositoryClass: App\Infrastructure\Doctrine\Adapter\TokenRepository
     id:
         id:
             type: uuid

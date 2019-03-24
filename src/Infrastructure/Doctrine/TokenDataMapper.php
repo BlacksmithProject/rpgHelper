@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Infrastructure\CredentialsManagement\Doctrine;
+namespace App\Infrastructure\Doctrine;
 
 use App\Domain\CredentialsManagement\Entity\Token;
 use App\Domain\CredentialsManagement\ValueObject\TokenType;
