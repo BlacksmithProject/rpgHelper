@@ -19,7 +19,7 @@ final class PlayerName
         $this->value = $value;
     }
 
-    public function __toString(): string
+    public function __toString()
     {
         return $this->value;
     }
