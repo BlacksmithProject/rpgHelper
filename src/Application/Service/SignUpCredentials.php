@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Application\CredentialsManagement\Service;
+namespace App\Application\Service;
 
-use App\Application\CredentialsManagement\Model\AuthenticatedCredentials;
+use App\Application\Model\AuthenticatedCredentials;
 use App\Domain\CredentialsManagement\Command\CredentialsRegistration\RegisterCredentials;
 use App\Domain\CredentialsManagement\Command\CredentialsRegistration\RegisterAuthenticationToken;
 use App\Domain\CredentialsManagement\CredentialsCommandBus;

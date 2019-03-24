@@ -20,8 +20,8 @@ services:
 
     # controllers are imported separately to make sure services can be injected
     # as action arguments even if you don't extend any base controller class
-    App\Application\CredentialsManagement\API\:
-       resource: '../src/Application/CredentialsManagement/API/'
+    App\Application\API\:
+       resource: '../src/Application/API/'
        tags: ['controller.service_arguments']
 
     # add more service definitions when explicit configuration is needed

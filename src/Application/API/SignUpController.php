@@ -1,11 +1,11 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Application\CredentialsManagement\API;
+namespace App\Application\API;
 
-use App\Application\CredentialsManagement\Model\AuthenticatedCredentials;
+use App\Application\Model\AuthenticatedCredentials;
 use App\Domain\CredentialsManagement\ErrorMessage;
-use App\Application\CredentialsManagement\Service\SignUpCredentials;
+use App\Application\Service\SignUpCredentials;
 use Assert\Assert;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;

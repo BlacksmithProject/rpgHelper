@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Application\CredentialsManagement\Service;
+namespace App\Application\Service;
 
 use App\Application\Shared\Exception\ApplicationException;
-use App\Application\CredentialsManagement\Model\AuthenticatedCredentials;
+use App\Application\Model\AuthenticatedCredentials;
 use App\Domain\CredentialsManagement\Entity\Credentials;
 use App\Domain\CredentialsManagement\Entity\Token;
 use App\Domain\CredentialsManagement\Query\FindCredentialsWithEmail;

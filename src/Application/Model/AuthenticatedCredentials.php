@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Application\CredentialsManagement\Model;
+namespace App\Application\Model;
 
 use App\Domain\CredentialsManagement\Entity\Credentials;
 use App\Domain\CredentialsManagement\Entity\Token;
