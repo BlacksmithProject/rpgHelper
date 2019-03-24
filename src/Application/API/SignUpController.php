@@ -3,9 +3,9 @@ declare(strict_types=1);
 
 namespace App\Application\API;
 
-use App\Application\Model\AuthenticatedCredentials;
+use App\Application\Model\AuthenticatedPlayer;
 use App\Domain\CredentialsManagement\ErrorMessage;
-use App\Application\Service\SignUpCredentials;
+use App\Application\Service\SignUp;
 use Assert\Assert;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -15,25 +15,27 @@ final class SignUpController
 {
     private const FIELD_EMAIL = 'email';
     private const FIELD_PASSWORD = 'password';
+    private const FIELD_NAME = 'name';
 
-    private $signUpCredentials;
+    private $signUp;
 
-    public function __construct(SignUpCredentials $signUpCredentials)
+    public function __construct(SignUp $signUp)
     {
-        $this->signUpCredentials = $signUpCredentials;
+        $this->signUp = $signUp;
     }
 
     public function __invoke(Request $request): JsonResponse
     {
         $this->validateRequest($request);
 
-        /** @var AuthenticatedCredentials $authenticatedCredentials */
-        $authenticatedCredentials = ($this->signUpCredentials)(
+        /** @var AuthenticatedPlayer $player */
+        $player = ($this->signUp)(
             $request->request->get('email'),
-            $request->request->get('password')
+            $request->request->get('password'),
+            $request->request->get('name')
         );
 
-        return new JsonResponse($authenticatedCredentials->expose(), Response::HTTP_CREATED);
+        return new JsonResponse($player->expose(), Response::HTTP_CREATED);
     }
 
     private function validateRequest(Request $request): void
@@ -47,6 +49,10 @@ final class SignUpController
             ->that($request->request->get(static::FIELD_PASSWORD), static::FIELD_PASSWORD)
             ->notNull(ErrorMessage::PASSWORD_CANNOT_BE_NULL())
             ->notBlank(ErrorMessage::PASSWORD_CANNOT_BE_BLANK())
+
+            ->that($request->request->get(static::FIELD_NAME), static::FIELD_NAME)
+            ->notNull(\App\Domain\GameManagement\ErrorMessage::PLAYER_NAME_CANNOT_BE_NULL())
+            ->notBlank(\App\Domain\GameManagement\ErrorMessage::PLAYER_NAME_CANNOT_BE_BLANK())
 
             ->verifyNow();
     }

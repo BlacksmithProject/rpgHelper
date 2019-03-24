@@ -5,4 +5,5 @@ namespace App\Domain\GameManagement\ValueObject;
 
 interface PlayerId
 {
+    public function __toString();
 }

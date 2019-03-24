@@ -1,0 +1,12 @@
+App\Infrastructure\Doctrine\PlayerDataMapper:
+    type: entity
+    table: 'player'
+    repositoryClass: App\Infrastructure\Doctrine\Adapter\PlayerRepository
+    id:
+        id:
+            type: uuid
+    fields:
+        name:
+            type: string
+            length: 191
+            unique: true

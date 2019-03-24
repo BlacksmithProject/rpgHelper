@@ -3,9 +3,9 @@ declare(strict_types=1);
 
 namespace App\Application\API;
 
-use App\Application\Model\AuthenticatedCredentials;
+use App\Application\Model\AuthenticatedPlayer;
 use App\Application\Shared\Exception\ApplicationException;
-use App\Application\Service\SignInCredentials;
+use App\Application\Service\SignIn;
 use App\Domain\CredentialsManagement\ErrorMessage;
 use Assert\Assert;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -17,11 +17,11 @@ final class SignInController
     private const FIELD_EMAIL = 'email';
     private const FIELD_PASSWORD = 'password';
 
-    private $signInCredentials;
+    private $signIn;
 
-    public function __construct(SignInCredentials $signInCredentials)
+    public function __construct(SignIn $signIn)
     {
-        $this->signInCredentials = $signInCredentials;
+        $this->signIn = $signIn;
     }
 
     /**
@@ -33,13 +33,13 @@ final class SignInController
 
         $this->validateRequest($decodedAuthorization[0], $decodedAuthorization[1]);
 
-        /** @var AuthenticatedCredentials $credentials */
-        $credentials = ($this->signInCredentials)(
+        /** @var AuthenticatedPlayer $authenticatedPlayer */
+        $authenticatedPlayer = ($this->signIn)(
             $decodedAuthorization[0],
             $decodedAuthorization[1]
         );
 
-        return new JsonResponse($credentials->expose(), Response::HTTP_OK);
+        return new JsonResponse($authenticatedPlayer->expose(), Response::HTTP_OK);
     }
 
     /**

@@ -8,22 +8,22 @@ use App\Domain\GameManagement\ValueObject\PlayerName;
 
 final class Player
 {
-    private $playerId;
-    private $playerName;
+    private $id;
+    private $name;
 
     public function __construct(PlayerId $playerId, PlayerName $playerName)
     {
-        $this->playerId = $playerId;
-        $this->playerName = $playerName;
+        $this->id = $playerId;
+        $this->name = $playerName;
     }
 
-    public function playerId(): PlayerId
+    public function id(): PlayerId
     {
-        return $this->playerId;
+        return $this->id;
     }
 
-    public function playerName(): PlayerName
+    public function name(): PlayerName
     {
-        return $this->playerName;
+        return $this->name;
     }
 }
