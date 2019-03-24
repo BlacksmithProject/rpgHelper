@@ -23,11 +23,12 @@ final class SignInControllerTest extends WebTestCase
     public function testSignUp(): void
     {
         $client = static::createClient();
-        $client->request(Request::METHOD_POST, '/credentials', [
+        $client->request(Request::METHOD_POST, '/players', [
             'email' => 'john.snow@winterfell.north',
             'password' => 'winterIsComing',
+            'name' => 'John Snow'
         ]);
-        $client->request(Request::METHOD_GET, '/credentials', [], [], [
+        $client->request(Request::METHOD_GET, '/players', [], [], [
             'PHP_AUTH_USER' => 'john.snow@winterfell.north',
             'PHP_AUTH_PW' => 'winterIsComing',
         ]);
@@ -35,9 +36,10 @@ final class SignInControllerTest extends WebTestCase
 
         $this->assertSame(Response::HTTP_OK, $client->getResponse()->getStatusCode());
         $response = json_decode($client->getResponse()->getContent(), true);
-        $this->assertTrue(isset($response['credentials']['id']));
-        $this->assertSame(36, strlen($response['credentials']['id']));
-        $this->assertSame($response['credentials']['email'], 'john.snow@winterfell.north');
-        $this->assertTrue(isset($response['credentials']['token']));
+        $this->assertTrue(isset($response['player']['id']));
+        $this->assertSame(36, strlen($response['player']['id']));
+        $this->assertSame($response['player']['email'], 'john.snow@winterfell.north');
+        $this->assertSame($response['player']['name'], 'John Snow');
+        $this->assertTrue(isset($response['player']['token']));
     }
 }
