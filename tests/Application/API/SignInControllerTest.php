@@ -33,7 +33,6 @@ final class SignInControllerTest extends WebTestCase
             'PHP_AUTH_PW' => 'winterIsComing',
         ]);
 
-
         $this->assertSame(Response::HTTP_OK, $client->getResponse()->getStatusCode());
         $response = json_decode($client->getResponse()->getContent(), true);
         $this->assertTrue(isset($response['player']['id']));
